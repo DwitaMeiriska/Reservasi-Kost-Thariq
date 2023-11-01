@@ -26,7 +26,7 @@
           <li><a href="{{ route('portofolio.index')  }}">Portofolio</a></li>
           <li><a href="{{ route('about.index')  }}">Tentang Kami</a></li>
           <li><a href="{{ route('contact.index')  }}">Contact</a></li>
-          <li><a href="contact.html">Login</a></li>
+          <li><a href="{{ route('home')  }}">Login</a></li>
         </ul>
       </nav><!-- .navbar -->
 
