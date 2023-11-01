@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
  <!-- ======= Header ======= -->
  <header id="header" class="header d-flex align-items-center">
@@ -15,7 +13,7 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="{{ route('index')  }}" class="active">Home</a></li>
           <li class="dropdown"><a href="#"><span>Tipe Kamar</span> <i
             class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
@@ -24,10 +22,10 @@
           <li><a href="#">kamar C</a></li>
         </ul>
       </li>
-          <li><a href="about.html">Riwayat Transaksi</a></li>
-          <li><a href="services.html">Portofolio</a></li>
-          <li><a href="projects.html">Tentang Kami</a></li>
-          <li><a href="blog.html">Contact</a></li>
+          <li><a href="">Riwayat Transaksi</a></li>
+          <li><a href="{{ route('portofolio.index')  }}">Portofolio</a></li>
+          <li><a href="{{ route('about.index')  }}">Tentang Kami</a></li>
+          <li><a href="{{ route('contact.index')  }}">Contact</a></li>
           <li><a href="contact.html">Login</a></li>
         </ul>
       </nav><!-- .navbar -->

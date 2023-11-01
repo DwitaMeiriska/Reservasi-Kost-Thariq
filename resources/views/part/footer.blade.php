@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- ======= Footer ======= -->
-<footer id="footer" class="footer" style=" background: url({{ asset('image/img-blank.png') }}) top center no-repeat;">
+ <!-- ======= Footer ======= -->
+ <footer id="footer" class="footer" style=" background: url({{ asset('image/img-blank.png') }}) top center no-repeat;">
 
     <div class="footer-content position-relative">
       <div class="container">
@@ -66,6 +63,6 @@
         </div>
         </div>
     </div>
-    
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+
+  </footer>
+  <!-- End Footer -->

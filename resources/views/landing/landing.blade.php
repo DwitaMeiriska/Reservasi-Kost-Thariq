@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-@extends('layouts')
+
+@extends('part.layouts')
 @section('content')
 
 <!-- ======= Hero Section ======= -->
@@ -13,7 +12,6 @@
             <p data-aos="fade-up">Selamat datang di kost kami! Kami menyediakan fasilitas yang nyaman dan terjangkau
               untuk Anda. Kost ini terletak di lokasi strategis dan dekat dengan berbagai fasilitas penting. Kami menawarkan
               kenyamanan dan keamanan untuk masa tinggal Anda.</p>
-            <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Mulai</a>
           </div>
         </div>
       </div>
@@ -385,25 +383,8 @@
     </div>
   </section><!-- End Recent Blog Posts Section -->
 </div>
+</main>
 @endsection
 
-<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-    class="bi bi-arrow-up-short"></i></a>
 
-<div id="preloader"></div>
 
-<!-- Vendor JS Files -->
-<script src="{{ asset('landing/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('landing/assets/vendor/aos/aos.js') }}"></script>
-<script src="{{ asset('landing/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-<script src="{{ asset('landing/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('landing/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-<script src="{{ asset('landing/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-<script src="{{ asset('landing/assets/vendor/php-email-form/validate.js') }}"></script>
-
-<!-- Template Main JS File -->
-<script src="{{ asset('landing/assets/js/main.js') }}"></script>
-
-</body>
-
-</html>
