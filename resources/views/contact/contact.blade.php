@@ -7,10 +7,6 @@
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
             <h2>Contact</h2>
-            <ol>
-                <li><a href="index.html">Home</a></li>
-                <li>Contact</li>
-            </ol>
 
         </div>
     </div>
@@ -25,7 +21,7 @@
                     <div class="info-item  d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-map"></i>
                         <h3>Our Address</h3>
-                        <p>A108 Adam Street, New York, NY 535022</p>
+                        <p>Jl.Juwita Kanan no .07 kost Thariq</p>
                     </div>
                 </div>
                 <!-- End Info Item -->

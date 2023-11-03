@@ -1,31 +1,70 @@
-@extends('layouts.app')
-
-@section('custom_styles')
-
-@endsection
-
+@extends('admin.main')
+@section('title', 'statistik')
 @section('content')
+<section>
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        </div>
+        <div class="row">
+            <div class="col-lg-3 col-6">
 
-         <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">
-                                {{ __('You are logged in!') }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="small-box bg-info">
+            <div class="inner">
+            <h3>150</h3>
+            <p>New Orders</p>
             </div>
-            <!-- /.row -->
+            <div class="icon">
+            <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
 
-    </div>
+            <div class="col-lg-3 col-6">
+
+            <div class="small-box bg-success">
+            <div class="inner">
+            <h3>53<sup style="font-size: 20px">%</sup></h3>
+            <p>Bounce Rate</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+
+            <div class="small-box bg-warning">
+            <div class="inner">
+            <h3>44</h3>
+            <p>User Registrations</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+
+            <div class="small-box bg-danger">
+            <div class="inner">
+            <h3>65</h3>
+            <p>Unique Visitors</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
+
+            </div>
     <!-- /.container-fluid -->
+    </div>
+    <section>
 @endsection
