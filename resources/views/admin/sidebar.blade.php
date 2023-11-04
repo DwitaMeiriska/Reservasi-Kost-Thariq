@@ -7,13 +7,13 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-          </li>
+          {{-- </li>
           <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ url('data') }}" class="nav-link">Home</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Contact</a>
-          </li>
+          </li> --}}
         </ul>
       </nav>
       <!-- /.navbar -->
@@ -97,7 +97,7 @@
               </div><!-- /.col -->
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  {{-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
                   <li class="breadcrumb-item active">{{ $title ?? '' }}</li>
                 </ol>
               </div><!-- /.col -->
@@ -111,18 +111,71 @@
           <div class="container-fluid">
             <!-- Your content here -->
             @yield('content')
+            <div class="col-md-26 col-26">
+                <div class="card">
+                    <div class="bg-white py-4 card-header">
+                        <h4 class="mb-0">Daftar Penyewa</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table text-nowrap mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Nama Penyewa</th>
+                                    <th>Tipe Kamar</th>
+                                    <th>Tingkat Kemajuan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3 lh-1">
+                                                <h5 class="mb-1"><a class="text-inherit" href="/#">Dropbox Design System</a></h5>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        Medium
+                                    </td>
+                                    <td class="align-middle">
+                                        34%
+                                    </td>
+                                </tr>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3 lh-1">
+                                                <h5 class="mb-1"><a class="text-inherit" href="/#">Dropbox Design System</a></h5>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        Medium
+                                    </td>
+                                    <td class="align-middle">
+                                        34%
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
           </div><!-- /.container-fluid -->
         </div>
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
 
+
+
+
       <!-- Footer -->
       <footer class="main-footer">
         <div class="float-right d-none d-sm-block">
-          <b>Version</b> 3.2.0
+          <b></b>
         </div>
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        <strong> &copy;  <a href="https://adminlte.io"></a>.</strong>
       </footer>
       <!-- /.footer -->
 

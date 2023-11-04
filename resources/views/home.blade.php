@@ -66,5 +66,6 @@
             </div>
     <!-- /.container-fluid -->
     </div>
+   
     <section>
 @endsection

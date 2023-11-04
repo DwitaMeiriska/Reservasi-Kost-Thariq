@@ -39,7 +39,13 @@
                     <div class="info-item  d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-telephone"></i>
                         <h3>Call Us</h3>
-                        <p>+1 5589 55488 55</p>
+                    <p><a href="https://api.whatsapp.com/send?phone=&text=Hai, saya sangat tertarik dengan produk sepatu  bermerek  yang Anda tawarkan. Produk ini terlihat menggiurkan! Dengan harga yang terjangkau sebesar Rp ,saya ingin membuat pesanan.
+
+                            Alamat pengiriman saya berada di [alamat Anda]. Saya ingin memesan [jumlah] item Mochi Matcha ini. Produk ini terlihat lezat dan saya sangat ingin mencoba.
+
+                            Mohon konfirmasi ketersediaan stok dan informasi pembayaran lebih lanjut. Saya siap untuk melakukan pembayaran segera.
+
+                            Terima kasih banyak! Saya sangat menantikan respons dari Anda." target="_blank">+1 5589 55488 55 ></a></p>
                     </div>
                 </div>
                 <!-- End Info Item -->

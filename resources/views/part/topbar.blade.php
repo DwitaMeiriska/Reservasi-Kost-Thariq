@@ -13,7 +13,7 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{{ route('index')  }}" class="{{ route('index') ? 'active':' '}}">Home</a></li>
+          <li><a href="{{ route('index')  }}" class="{{ request()->is('home') ? 'active' : '' }}">Home</a></li>
           <li class="dropdown"><a href="#"><span>Tipe Kamar</span> <i
             class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
@@ -23,10 +23,11 @@
         </ul>
       </li>
           <li><a href="" >Riwayat Transaksi</a></li>
-          <li><a href="{{ route('portofolio.index')  }}" class="{{ route('portofolio.index') ? 'active':' '}}">Portofolio</a></li>
-          <li><a href="{{ route('about.index')  }}">Tentang Kami</a></li>
-          <li><a href="{{ route('contact.index')  }}">Contact</a></li>
-          <li><a href="{{ route('home')  }}">Login</a></li>
+          <li><a href="{{ route('portofolio.index') }}" class="{{ request()->is('portofolio*') ? 'active' : '' }}">Portofolio</a></li>
+          <li><a href="{{ route('about.index') }}" class="{{ request()->is('about*') ? 'active' : '' }}">Tentang Kami</a></li>
+          <li><a href="{{ route('contact.index') }}" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact</a></li>
+          <li><a href="{{ route('home') }}" class="{{ request()->is('home') ? 'active' : '' }}">Login</a></li>
+
         </ul>
       </nav><!-- .navbar -->
 
