@@ -17,9 +17,10 @@
           <li class="dropdown"><a href="#"><span>Tipe Kamar</span> <i
             class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
-          <li><a href="#">Kamar A</a></li>
+          <li><a href="">Kamar A</a></li>
           <li><a href="#">kamar B</a></li>
           <li><a href="#">kamar C</a></li>
+          <li><a href="#">kamar D</a></li>
         </ul>
       </li>
           <li><a href="" >Riwayat Transaksi</a></li>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\KostController;
 use App\Http\Controllers\PortofolioController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,4 @@ Route::resource('/', LandingController::class);
 Route::resource('/about', AboutController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/portofolio', PortofolioController::class);
+Route::get('/kost', [KostController::class, 'index']);

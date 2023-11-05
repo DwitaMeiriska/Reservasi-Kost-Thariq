@@ -56,15 +56,15 @@
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
                   <li class="nav-item">
-                    <a href="{{ url('index.php/dashboard') }}" class="nav-link">
+                    <a href="/home" class="nav-link">
                       <i class="nav-icon fas fa-tachometer-alt"></i>
                       <p>dashboard</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ url('statistik') }}" class="nav-link">
+                    <a href="/kost" class="nav-link">
                       <i class="nav-icon fas fa-users"></i>
-                      <p>statistik</p>
+                      <p>Data Kos</p>
                     </a>
                   </li>
                   <li class="nav-item">
