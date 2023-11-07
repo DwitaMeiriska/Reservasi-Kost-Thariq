@@ -17,8 +17,9 @@
           <li class="dropdown"><a href="#"><span>Tipe Kamar</span> <i
             class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
-            <li><a href="{{ route('kost.index') }}" class="{{ request()->is('kost*') ? 'active' : '' }}">Kamar A</a></li>
-            <li><a href="{{ route('kamarb.index') }}" class="{{ request()->is('kamarb*') ? 'active' : '' }}">kamar B</a></li> 
+            <li><a href="/kost" class="{{ request()->is('kost*') ? 'active' : '' }}">Kamar A</a></li>
+            <li><a href="/kamarb" class="{{ request()->is('kost*') ? 'active' : '' }}">Kamar B</a></li>
+            </ul>
 
       </li>
           <li><a href="" >Riwayat Transaksi</a></li>
@@ -27,7 +28,7 @@
           <li><a href="{{ route('contact.index') }}" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact</a></li>
           <li><a href="{{ route('home') }}" class="{{ request()->is('home') ? 'active' : '' }}">Login</a></li>
 
-        </ul>
+
       </nav><!-- .navbar -->
 
     </div>

@@ -61,7 +61,6 @@
         <ul>
           <li><a href="#">Kamar A</a></li>
           <li><a href="#">kamar B</a></li>
-          <li><a href="#">kamar C</a></li>
         </ul>
       </li>
           <li><a href="about.html">Riwayat Transaksi</a></li>
@@ -152,40 +151,6 @@
                   <h4 class="card-title">Kamar Tipe B</h4>
                   <p>Kamar ini cocok untuk individu atau pasangan. Dengan fasilitas yang lengkap, Anda akan merasa
                     betah tinggal di sini.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Card Item -->
-
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url({{ asset('image/img-blank.png') }});"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">Kamar Tipe C</h4>
-                  <p>Kamar ini menyediakan ruang yang luas dan nyaman untuk Anda. Dengan fasilitas modern, Anda akan
-                    merasa seperti di rumah sendiri.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Card Item -->
-
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="card-item">
-            <div class="row">
-              <div class="col-xl-5">
-                <div class="card-bg" style="background-image: url({{ asset('image/img-blank.png') }});"></div>
-              </div>
-              <div class="col-xl-7 d-flex align-items-center">
-                <div class="card-body">
-                  <h4 class="card-title">Kamar Tipe D</h4>
-                  <p>Kamar ini memberikan pengalaman menginap yang luar biasa. Dengan fasilitas mewah dan pemandangan
-                    indah, Anda akan merasa dimanjakan.</p>
                 </div>
               </div>
             </div>
