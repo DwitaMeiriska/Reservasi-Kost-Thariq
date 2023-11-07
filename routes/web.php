@@ -40,6 +40,6 @@ Route::resource('/about', AboutController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/portofolio', PortofolioController::class);
 Route::resource('/kost', KostController::class);
-Route::resource('/kost', KamarbController::class);
+Route::resource('/kamarb', KamarbController::class);
 
 
