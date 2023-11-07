@@ -37,15 +37,24 @@
 
                 <hr>
 
-                <a href="blog-details.html" class="readmore stretched-link"><span>Detail Kamar</span><i
-                    class="bi bi-arrow-right"></i></a>
+                <a href="blog-details.html" class="readmore stretched-link">
+                    <span>Detail Kamar</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+
+                  <ul>
+                    <li><a href="{{ route('pesanan.index') }}" class="{{ request()->is('pesanan*') ? 'active' : '' }}">Read More</a></li>
+                    <a href="{{ route('pesanan.show', ['id' => $pesanan->id]) }}">Read More</a>
+
+                  </ul>
+
 
               </div>
 
             </div>
           </div><!-- End post list item -->
           @endforeach
-          
+
         </div><!-- End blog posts list -->
 
       </div>

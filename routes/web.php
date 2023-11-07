@@ -1,12 +1,17 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\KamarbController;
-use App\Http\Controllers\LandingController;
-use App\Http\Controllers\KostController;
-use App\Http\Controllers\PortofolioController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\KamarbController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PesananController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PortofolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,10 +44,11 @@ Route::resource('/', LandingController::class);
 Route::resource('/about', AboutController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/portofolio', PortofolioController::class);
-// <<<<<<< HEAD
+
 Route::get('/kost', [\App\Http\Controllers\KostController::class, 'indexA']);
 Route::get('/kamarb', [\App\Http\Controllers\KostController::class, 'indexB']);
-// =======
+
+Route::resource('/pesanan', PesananController::class);
 
 
 
