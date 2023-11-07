@@ -11,6 +11,6 @@ class KostController extends Controller
 {
     public function indexB(){
         $kost = DB::select("SELECT * FROM kosts WHERE kategori_id = 2");
-        return view('kamarb.kamarb', compact('kamarb'));
+        return view('kamarb.kamarb', compact('kost'));
     }
 }

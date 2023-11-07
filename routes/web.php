@@ -39,7 +39,10 @@ Route::resource('/', LandingController::class);
 Route::resource('/about', AboutController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/portofolio', PortofolioController::class);
+// <<<<<<< HEAD
 Route::get('/kost', [\App\Http\Controllers\KostController::class, 'indexA']);
 Route::get('/kamarb', [\App\Http\Controllers\KostController::class, 'indexB']);
+// =======
+
 
 
