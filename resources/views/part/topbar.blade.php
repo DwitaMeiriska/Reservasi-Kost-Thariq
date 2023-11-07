@@ -17,11 +17,9 @@
           <li class="dropdown"><a href="#"><span>Tipe Kamar</span> <i
             class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
-          <li><a href="">Kamar A</a></li>
-          <li><a href="#">kamar B</a></li>
-          <li><a href="#">kamar C</a></li>
-          <li><a href="#">kamar D</a></li>
-        </ul>
+            <li><a href="{{ route('kost.index') }}" class="{{ request()->is('kost*') ? 'active' : '' }}">Kamar A</a></li>
+            <li><a href="{{ route('kamarb.index') }}" class="{{ request()->is('kamarb*') ? 'active' : '' }}">kamar B</a></li> 
+
       </li>
           <li><a href="" >Riwayat Transaksi</a></li>
           <li><a href="{{ route('portofolio.index') }}" class="{{ request()->is('portofolio*') ? 'active' : '' }}">Portofolio</a></li>

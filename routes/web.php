@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\KamarbController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\KostController;
 use App\Http\Controllers\PortofolioController;
@@ -38,4 +39,7 @@ Route::resource('/', LandingController::class);
 Route::resource('/about', AboutController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/portofolio', PortofolioController::class);
-Route::get('/kost', [KostController::class, 'index']);
+Route::resource('/kost', KostController::class);
+Route::resource('/kost', KamarbController::class);
+
+
