@@ -12,6 +12,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\PesanKostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,4 @@ Route::get('/kost', [\App\Http\Controllers\KostController::class, 'indexA']);
 Route::get('/kamarb', [\App\Http\Controllers\KostController::class, 'indexB']);
 
 Route::resource('/pesanan', PesananController::class);
-
-
-
+Route::resource('/pesankost', PesanKostController::class);
