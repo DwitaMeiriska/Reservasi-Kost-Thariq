@@ -49,5 +49,7 @@ Route::resource('/portofolio', PortofolioController::class);
 Route::get('/kost', [\App\Http\Controllers\KostController::class, 'indexA']);
 Route::get('/kamarb', [\App\Http\Controllers\KostController::class, 'indexB']);
 
-Route::resource('/pesanan', PesananController::class);
-Route::resource('/pesankost', PesanKostController::class);
+Route::get('/pesanan/{id}', [\App\Http\Controllers\KostController::class, 'show'])->name('show');
+// INI YG REGISTER USER Route::resource('/pesankost', PesanKostController::class);
+Route::get('/show/{id}', [\App\Http\Controllers\KostController::class, 'show'])->name('show');
+Route::get('/pembayaran', [\App\Http\Controllers\PesananController::class, 'pembayaran'])->name('pembayaran');

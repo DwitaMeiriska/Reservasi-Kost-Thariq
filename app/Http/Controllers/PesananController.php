@@ -13,7 +13,19 @@ class PesananController extends Controller
      */
     public function index()
     {
+        
         return view('pesanan.pesanan');
+    }
+
+    public function pemesanan(Request $request){
+        $kost = Kost::all();
+        $nama_kamar = $request->get('nama_kamar');
+        $harga_kamar = $request->get('harga_kammar');
+        return view('pesanan.pesanan', compact('kost', 'nama_kamar', 'harga_kamar'));
+    }
+
+    public function pembayaran(){
+        return view('pembayaran.pembayaran');
     }
 
     /**

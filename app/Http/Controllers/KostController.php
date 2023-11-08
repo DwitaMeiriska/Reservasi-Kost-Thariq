@@ -17,4 +17,8 @@ class KostController extends Controller
         $kost = DB::select("SELECT * FROM kosts WHERE kategori_id = 2");
         return view('kamarb.kamarb', compact('kost'));
     }
+    public function show($id){
+        $listkost = Kost::find($id);
+        return view('pesanan.pesanan', compact(['listkost']));
+    }
 }

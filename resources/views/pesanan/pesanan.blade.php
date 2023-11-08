@@ -36,9 +36,9 @@
                 </a>
             </div>
         </div>
-
+        @foreach($listkost as $kosts)
         <div class="col-lg-7 pb-5">
-            <h3 class="font-weight-semi-bold">Kamar A01</h3>
+            <h3 class="font-weight-semi-bold">{{$kosts->harga_kamar}}</h3>
             <div class="d-flex mb-3">
                 <!-- <div class="text-primary mr-2">
                     <small class="fas fa-star"></small>
@@ -49,9 +49,9 @@
                 </div> -->
 
             </div>
-            <h3 class="font-weight-semi-bold mb-4">650000</h3>
+            <h3 class="font-weight-semi-bold mb-4"></h3>
             <p class="mb-4">
-                kost hebat
+                {{$kosts->nama_kamar}}
             </p>
             <div class="d-flex mb-3">
                 <p class="text-dark font-weight-medium mb-0 mr-6" style="margin-right:20px">Jangka Sewa</p>
@@ -78,6 +78,7 @@
             </div>
 
         </div>
+        @endforeach
     </div>
     <div class="row px-xl-5">
         <div class="col">
