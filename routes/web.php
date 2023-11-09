@@ -12,6 +12,8 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\UlasanController;
+
 // INI REGISTER USER use App\Http\Controllers\PesanKostController;
 
 /*
@@ -46,10 +48,12 @@ Route::resource('/about', AboutController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/portofolio', PortofolioController::class);
 
-Route::get('/kost', [\App\Http\Controllers\KostController::class, 'indexA']);
-Route::get('/kamarb', [\App\Http\Controllers\KostController::class, 'indexB']);
+Route::get('/kost', [KostController::class, 'indexA']);
+Route::get('/kamarb', [KostController::class, 'indexB']);
 
-Route::get('/pesanan/{id}', [\App\Http\Controllers\KostController::class, 'show'])->name('show');
+Route::get('/pesanan/{id}', [KostController::class, 'show'])->name('show');
 // INI YG REGISTER USER Route::resource('/pesankost', PesanKostController::class);
-Route::get('/show/{id}', [\App\Http\Controllers\KostController::class, 'show'])->name('show');
-Route::get('/pembayaran', [\App\Http\Controllers\PesananController::class, 'pembayaran'])->name('pembayaran');
+Route::get('/show/{id}', [PesananController::class, 'pemesanan'])->name('show');
+Route::get('/pembayaran', [PesananController::class, 'pembayaran'])->name('pembayaran');
+
+Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');

@@ -84,7 +84,7 @@
         <div class="col">
             <div class="nav nav-tabs justify-content-center border-secondary mb-4">
                 <a class="nav-item nav-link active" id="deskripsi-tab">Deskripsi</a>
-                <a class="nav-item nav-link active" id="ulasan-tab">Ulasan (0)</a>
+                <a class="nav-item nav-link active" id="ulasan-tab">Ulasan</a>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="tab-pane-1">
@@ -96,44 +96,88 @@
                         Dolore magna est eirmod sanctus dolor, amet diam et eirmod et ipsum. Amet dolore tempor consetetur sed lorem dolor sit lorem tempor. Gubergren amet amet labore sadipscing clita clita diam clita. Sea amet et sed ipsum lorem elitr et, amet et labore voluptua sit rebum. Ea erat sed et diam takimata sed justo. Magna takimata justo et amet magna et.
                     </p>
                 </div>
-                <div class="tab-pane fade show active" id="tab-pane-3">
+                <div class="tab-pane fade" id="tab-pane-3">
+                    <h4 class="mb-4 mt-4">Ulasan</h4>
+                    @foreach($ulasans as $ulasan)
+                    <div class="mt-3">
+                        <strong>Rating:</strong>
+                        @for ($i = 1; $i <= 5; $i++)
+                            @if ($i <= $ulasan->rating)
+                                <i class="fas fa-star text-warning"></i>
+                            @else
+                                <i class="far fa-star text-warning"></i>
+                            @endif
+                        @endfor
+                        <br>
+                        <strong>Ulasan:</strong> {{ $ulasan->ulasan }} <br>
+                        <strong>Nama:</strong> {{ $ulasan->nama }} <br>
+                        <strong>Email:</strong> {{ $ulasan->email }} <br>
+                    </div>
+                @endforeach
                     <h4 class="mb-4">Beri Ulasan</h4>
+
+                   
                     <small>
                         Alamat email Anda tidak akan dipublikasikan. Bidang yang harus diisi ditandai dengan *
                     </small>
                     <div class="d-flex my-3">
                         <p class="mb-0 mr-2">Rating Anda * :</p>
-                        <div class="text-primary">
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
+                        <div class="text-primary" id="rating-stars">
+                            <!-- Rating stars will be added dynamically using JavaScript -->
                         </div>
                     </div>
-                    <form>
+                    <form id="ulasan-form" action="{{ route('ulasan.store') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="kost_id" value="{{ $kosts->id }}">
                         <div class="form-group">
                             <label for="message">Ulasan Anda *</label>
-                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea id="message" name="ulasan" cols="30" rows="5" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="name">Nama Anda *</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" name="nama" class="form-control" id="name">
                         </div>
                         <div class="form-group">
                             <label for="email">Alamat Email Anda *</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" name="email" class="form-control" id="email">
                         </div>
                         <div class="form-group mb-0">
                             <input type="submit" value="Kirim Ulasan Anda" class="btn btn-primary px-3">
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+                
+                <script>
+                    // ... (Bagian sebelumnya tetap sama) ...
+                
+                    // Dynamically add rating stars
+                    var ratingStarsContainer = document.getElementById('rating-stars');
+                    for (var i = 1; i <= 5; i++) {
+                        var starIcon = document.createElement('i');
+                        starIcon.className = 'far fa-star';
+                        starIcon.dataset.rating = i;
+                        starIcon.addEventListener('click', function () {
+                            // Set the selected rating in a hidden input field
+                            var ratingInput = document.createElement('input');
+                            ratingInput.type = 'hidden';
+                            ratingInput.name = 'rating';
+                            ratingInput.value = this.dataset.rating;
+                            document.getElementById('ulasan-form').appendChild(ratingInput);
+                
+                            // Update the appearance of stars based on the selected rating
+                            for (var j = 1; j <= 5; j++) {
+                                var star = ratingStarsContainer.querySelector('[data-rating="' + j + '"]');
+                                if (j <= this.dataset.rating) {
+                                    star.className = 'fas fa-star';
+                                } else {
+                                    star.className = 'far fa-star';
+                                }
+                            }
+                        });
+                        ratingStarsContainer.appendChild(starIcon);
+                    }
+                </script>
+                
 <script>
     // Ketika tombol "Ulasan (0)" ditekan, aktifkan tab ulasan
     document.getElementById('ulasan-tab').addEventListener('click', function (e) {

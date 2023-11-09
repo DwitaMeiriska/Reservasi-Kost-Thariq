@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pesanan;
+use App\Models\Pesanan;
+use App\Models\Kost;
+use App\Models\Ulasan;
 
 
 class PesananController extends Controller
@@ -17,11 +19,18 @@ class PesananController extends Controller
         return view('pesanan.pesanan');
     }
 
-    public function pemesanan(Request $request){
-        $kost = Kost::all();
+    public function pemesanan(Request $request, $id){
+        // $listkost = Kost::all();
+        $listkost = Kost::where('id', $id)->get();
         $nama_kamar = $request->get('nama_kamar');
-        $harga_kamar = $request->get('harga_kammar');
-        return view('pesanan.pesanan', compact('kost', 'nama_kamar', 'harga_kamar'));
+        $harga_kamar = $request->get('harga_kamar');
+        $ulasans = Ulasan::where('kost_id', $id)
+        ->orderByDesc('rating') // Urutkan berdasarkan rating terbaik
+        ->take(3) // Ambil tiga ulasan
+        ->get();
+
+        return view('pesanan.pesanan', compact('listkost', 'nama_kamar', 'harga_kamar', 'ulasans'));
+    
     }
 
     public function pembayaran(){
@@ -60,6 +69,10 @@ class PesananController extends Controller
         //  }
 
         //  return view('pesanan.pesanan', compact('pesanan'));
+        // $listkost = Kost::all();
+        // $nama_kamar = $request->get('nama_kamar');
+        // $harga_kamar = $request->get('harga_kamar');
+        // return view('pesanan.pesanan', compact('listkost', 'nama_kamar', 'harga_kamar'));
      }
 
 
