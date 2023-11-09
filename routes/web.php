@@ -12,7 +12,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PortofolioController;
-// use App\Http\Controllers\PesanKostController;
+// INI REGISTER USER use App\Http\Controllers\PesanKostController;
 
 /*
 |--------------------------------------------------------------------------

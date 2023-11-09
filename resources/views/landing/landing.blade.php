@@ -60,7 +60,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Kamar Tipe A</h4>
                   <p>Kamar ini dilengkapi dengan berbagai fasilitas untuk kenyamanan Anda. Fasilitas meliputi tempat tidur
-                    nyaman, kamar mandi pribadi, dan akses Wi-Fi cepat.</p>
+                    nyaman, kamar mandi pribadi, dan akses Wi-Fi cepat. CUMA MENYEDIAKAN KAMAR MANDI DALAM, GRATIS KASUR, DAN GRATIS LEMARI</p>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Kamar Tipe B</h4>
                   <p>Kamar ini cocok untuk individu atau pasangan. Dengan fasilitas yang lengkap, Anda akan merasa
-                    betah tinggal di sini.</p>
+                    betah tinggal di sini. FASILITAS CUMA KAMAR MANDI DALAM</p>
                 </div>
               </div>
             </div>

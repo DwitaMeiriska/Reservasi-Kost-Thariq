@@ -37,7 +37,7 @@
 
                 <hr>
 
-                <a href="{{ route('pesanan.index') }}" class="readmore stretched-link">
+                  <a href="{{ route('show', ['id' => $kost->id]) }}" class="readmore stretched-link">
                     <span>Detail Kamar</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
