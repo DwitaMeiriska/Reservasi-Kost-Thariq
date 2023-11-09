@@ -31,7 +31,7 @@
 
                 <div class="meta d-flex align-items-center">
                   <div class="d-flex align-items-center">
-                    <i class="bi bi-cash"></i> <span class="ps-2">{{$kost->harga_kamar}}</span>
+                    <i class="bi bi-cash"></i> <span class="ps-2">{{$kost->harga_kamar}}/bulan</span>
                   </div>
                 </div>
 

@@ -13,6 +13,7 @@ use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\UlasanController;
+use App\Http\Controllers\TransaksiController;
 
 // INI REGISTER USER use App\Http\Controllers\PesanKostController;
 
@@ -57,3 +58,4 @@ Route::get('/show/{id}', [PesananController::class, 'pemesanan'])->name('show');
 Route::get('/pembayaran', [PesananController::class, 'pembayaran'])->name('pembayaran');
 
 Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
+Route::resource('/transaksi', TransaksiController::class);

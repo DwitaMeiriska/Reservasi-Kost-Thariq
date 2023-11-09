@@ -1,5 +1,5 @@
  <!-- ======= Footer ======= -->
- <footer id="footer" class="footer" style=" background: url({{ asset('image/img-blank.png') }}) top center no-repeat;">
+ <footer id="footer" class="footer" style=" background: top center no-repeat;">
 
     <div class="footer-content position-relative">
       <div class="container">

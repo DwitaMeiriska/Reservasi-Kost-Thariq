@@ -36,23 +36,18 @@
                 </a>
             </div>
         </div>
-        @foreach($listkost as $kosts)
+        
+        
         <div class="col-lg-7 pb-5">
-            <h3 class="font-weight-semi-bold">{{$kosts->harga_kamar}}</h3>
-            <div class="d-flex mb-3">
-                <!-- <div class="text-primary mr-2">
-                    <small class="fas fa-star"></small>
-                    <small class="fas fa-star"></small>
-                    <small class="fas fa-star"></small>
-                    <small class="fas fa-star-half-alt"></small>
-                    <small class="far fa-star"></small>
-                </div> -->
-
+            <form>
+            @foreach($listkost as $kosts)
+            <div class="mt-2">
+            <p class="fs-2 fw-bold mb-0">{{$kosts->nama_kamar}}</p>
+            <p class="fs-5 mb-2">{{$kosts->harga_kamar}}</p> 
             </div>
-            <h3 class="font-weight-semi-bold mb-4"></h3>
-            <p class="mb-4">
-                {{$kosts->nama_kamar}}
-            </p>
+            
+
+            {{-- Jangka Sewa --}}
             <div class="d-flex mb-3">
                 <p class="text-dark font-weight-medium mb-0 mr-6" style="margin-right:20px">Jangka Sewa</p>
                 <form class="ml-6">
@@ -72,13 +67,14 @@
             </div>
           
             <div class="d-flex align-items-center mb-4 pt-2">
-                <button class="btn btn-primary px-3">
-                    <i class=""></i> Pesan Kost
+                <button type="button" class="btn btn-secondary px-3">
+                    <i class=""></i> <a href="/pembayaran" class="text-light">Pesan Kost</a>
                 </button>
             </div>
-
+            @endforeach
         </div>
-        @endforeach
+
+    </form>
     </div>
     <div class="row px-xl-5">
         <div class="col">
@@ -113,10 +109,9 @@
                         <strong>Nama:</strong> {{ $ulasan->nama }} <br>
                         <strong>Email:</strong> {{ $ulasan->email }} <br>
                     </div>
-                @endforeach
-                    <h4 class="mb-4">Beri Ulasan</h4>
-
-                   
+                    @endforeach
+                    <div class="border mt-3"></div>
+                    <h4 class="mb-4 mt-4">Beri Ulasan</h4>
                     <small>
                         Alamat email Anda tidak akan dipublikasikan. Bidang yang harus diisi ditandai dengan *
                     </small>
