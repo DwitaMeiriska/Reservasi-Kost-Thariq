@@ -17,8 +17,8 @@
           <li class="dropdown"><a href="#"><span>Tipe Kamar</span> <i
             class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
-            <li><a href="/kost" class="{{ request()->is('kost*') ? 'active' : '' }}">Kamar A</a></li>
-            <li><a href="/kamarb" class="{{ request()->is('kost*') ? 'active' : '' }}">Kamar B</a></li>
+            <li><a href="/kost" class="{{ request()->is('kost*') ? 'active' : '' }}">Tipe Kamar A</a></li>
+            <li><a href="/kamarb" class="{{ request()->is('kost*') ? 'active' : '' }}">Tipe Kamar B</a></li>
             </ul>
 
       </li>
