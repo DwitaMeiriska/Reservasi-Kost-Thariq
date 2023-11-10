@@ -36,14 +36,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Route user
 Route::middleware('auth')->group(function () {
-    // Route::view('about', 'about')->name('about');
-
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
-
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 });
+
 Route::resource('/', LandingController::class);
 Route::resource('/about', AboutController::class);
 Route::resource('/contact', ContactController::class);
@@ -51,11 +50,10 @@ Route::resource('/portofolio', PortofolioController::class);
 
 Route::get('/kost', [KostController::class, 'indexA']);
 Route::get('/kamarb', [KostController::class, 'indexB']);
-
 Route::get('/pesanan/{id}', [KostController::class, 'show'])->name('show');
-// INI YG REGISTER USER Route::resource('/pesankost', PesanKostController::class);
 Route::get('/show/{id}', [PesananController::class, 'pemesanan'])->name('show');
-Route::get('/pembayaran', [PesananController::class, 'pembayaran'])->name('pembayaran');
+Route::get('/pembayaran/{id}', [PesananController::class, 'pembayaran'])->name('pembayaran');
+Route::get('/riwayat_transaksi', [TransaksiController::class, 'index'])->name ('riwayat_transaksi.index');
 
 Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
-Route::resource('/transaksi', TransaksiController::class);
+Route::post('/pembayaran', [PesananController::class, 'store'])->name('pembayaran.store');

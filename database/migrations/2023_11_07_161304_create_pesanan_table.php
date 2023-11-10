@@ -21,7 +21,6 @@ class CreatePesananTable extends Migration
             $table->enum('lama_sewa', ['1 Bulan', '6 Bulan', '12 Bulan']);
             $table->integer('total_harga');
             $table->enum('status', ['Menunggu Verifikasi', 'Sukses', 'Gagal']);
-            $table->string('deskripsi_kamar');
             $table->timestamps(); // Kolom created_at dan updated_at
         });
     }

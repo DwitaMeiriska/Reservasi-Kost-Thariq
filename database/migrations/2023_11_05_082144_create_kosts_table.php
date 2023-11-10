@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('nama_kamar');
             $table->integer('harga_kamar');
             $table->string('ukuran_kamar');
+            $table->string('deskripsi');
             $table->string('gambar');
             $table->enum('status', ['Tersedia', 'Tidak Tersedia']);
             $table->timestamps();

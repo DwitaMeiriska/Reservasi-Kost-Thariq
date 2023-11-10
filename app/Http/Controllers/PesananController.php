@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\Kost;
 use App\Models\Ulasan;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class PesananController extends Controller
 {
@@ -20,10 +21,10 @@ class PesananController extends Controller
     }
 
     public function pemesanan(Request $request, $id){
-        // $listkost = Kost::all();
         $listkost = Kost::where('id', $id)->get();
         $nama_kamar = $request->get('nama_kamar');
         $harga_kamar = $request->get('harga_kamar');
+        $kost_id = $request->get('id');
         $ulasans = Ulasan::where('kost_id', $id)
         ->orderByDesc('rating') // Urutkan berdasarkan rating terbaik
         ->take(3) // Ambil tiga ulasan
@@ -33,9 +34,56 @@ class PesananController extends Controller
     
     }
 
-    public function pembayaran(){
-        return view('pembayaran.pembayaran');
+    public function pembayaran(Request $request, $id){
+        // $listkost = Kost::all();
+        $listkost = Kost::where('id', $id)->get();
+        $nama_kamar = $request->get('nama_kamar');
+        $harga_kamar = $request->get('harga_kamar');
+        $kost_id = $request->get('id');
+
+        return view('pembayaran.pembayaran', compact('listkost', 'nama_kamar', 'harga_kamar', 'kost_id'));
     }
+    public function store(Request $request)
+    {
+        // dd($request->all()); 
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required|string',
+            'nama_kost' => 'required|string',
+            'harga_kost' => 'required|integer',
+            'tgl_sewa' => 'required|date',
+            'lama_sewa' => 'required|in:12 Bulan,6 Bulan,1 Bulan',
+            'total_harga' => 'required|integer'
+        ]);
+
+        if ($validator->fails()){
+            $errors = $validator->messages();
+            foreach ($errors->all() as $errors){
+                echo $errors;
+            }
+        }
+        
+        else{
+            // $tgl_sewa = date("Y-m-d".strtotime($request->input('tgl_sewa')));
+
+            $validatedData =  $validator->validate();
+
+            $pesanan =  new Pesanan;
+            $pesanan->kost_id = $request->input('kost_id');
+            $pesanan->nama = $validatedData['nama'];
+            $pesanan->nama_kost = $validatedData['nama_kost'];
+            $pesanan->harga_kost = $validatedData['harga_kost'];
+            $pesanan->lama_sewa = $validatedData['lama_sewa'];
+            $pesanan->tgl_sewa = $validatedData['tgl_sewa'];
+            $pesanan->total_harga = $validatedData['total_harga'];
+            $pesanan->user_id = auth()->user()->id;
+            $pesanan->status = $request->input('status') ?: "Menunggu Verifikasi";
+
+            $pesanan->save();
+
+            return redirect()->route('home');
+        }
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -48,10 +96,6 @@ class PesananController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.

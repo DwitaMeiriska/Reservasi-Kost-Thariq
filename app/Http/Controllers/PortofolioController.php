@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\portofolio;
 use Illuminate\Http\Request;
+
 
 class PortofolioController extends Controller
 {
@@ -11,7 +13,8 @@ class PortofolioController extends Controller
      */
     public function index()
     {
-        return view('portofolio.portofolio');
+        $portofolio = portofolio::all();
+        return view('portofolio.portofolio', compact('portofolio'));
     }
 
     /**

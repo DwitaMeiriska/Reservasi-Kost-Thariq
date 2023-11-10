@@ -66,24 +66,23 @@
                 <span class="badge badge-secondary badge-pill">3</span>
               </h4>
               <ul class="list-group mb-3">
+                @foreach($listkost as $kosts)
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                   <div>
-                    <h6 class="my-0">Nama Kamar</h6>
+                    <h6 class="my-0">{{$kosts->nama_kamar}}</h6>
                   </div>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                   <div>
                     <h6 class="my-0">Harga Kamar</h6>
-                    <small class="text-muted">Brief description</small>
+                    <small class="text-muted">{{$kosts->harga_kamar}}</small>
                   </div>
-                  <span class="text-muted">$8</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                   <div>
-                    <h6 class="my-0">Third item</h6>
-                    <small class="text-muted">Brief description</small>
+                    <h6 class="my-0">Ukuran Kamar</h6>
+                    <small class="text-muted">{{$kosts->ukuran_kamar}}</small>
                   </div>
-                  <span class="text-muted">$5</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between bg-light">
                   <div class="text-success">
@@ -96,6 +95,7 @@
                   <span>Total (USD)</span>
                   <strong>$20</strong>
                 </li>
+                @endforeach
               </ul>
     
               <form class="card p-2">
@@ -110,52 +110,55 @@
             <div class="col-md-8 order-md-1">
               <h4 class="mb-3">Billing address</h4>
 
-
-              <form class="needs-validation" novalidate="" action="" method="POST">
+{{-- ini bagian form --}}
+              <form action="{{ route('pembayaran.store')}}" method="POST">
+                @csrf
                 <div class="row">
+                  @foreach($listkost as $kosts)
+
+                  <input type="hidden" name="kost_id" id="kost_id" value="{{ $kosts->id }}">
                   <div class="mb-3">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="nama" placeholder="Nama" value="{{ auth()->user()->name}}" required="" readonly>
+                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" value="{{ auth()->user()->name}}" required="" readonly>
                   </div>
                   <div class="mb-3">
                     <label for="nama_kost">Nama Kamar</label>
-                    <input type="text" class="form-control" id="nama_kost" placeholder="Nama Kamar" value="" required="">
+                    <input type="text" class="form-control" name="nama_kost" id="nama_kost" placeholder="Nama Kamar" value="{{$kosts->nama_kamar}}" required="">
                   </div>
                   <div class="mb-3">
                     <label for="harga_kost">Harga Kost</label>
-                    <input type="text" class="form-control" id="harga_kost" placeholder="Harga Kost" value="" required="">
+                    <input type="text" class="form-control" name="harga_kost" id="harga_kost" placeholder="Harga Kost" value="{{$kosts->harga_kamar}}" required="">
                   </div>
                   <div class="mb-3">
                     <label for="tgl_sewa">Tanggal Sewa</label>
-                    <input type="date" class="form-control" id="tgl_sewa" placeholder="Tanggal Sewa" value="" required="">
+                    <input type="date" class="form-control" name="tgl_sewa" id="tgl_sewa" placeholder="Tanggal Sewa">
                   </div>
+                  <div class="form-group mb-2">
+                    <label for="lama_sewa">Lama Sewa (bulan)</label>
+                    <select id="lama_sewa" class="form-control" name="lama_sewa">
+                      <option selected>Choose...</option>
+                      <option>1 Bulan</option>
+                      <option>6 Bulan</option>
+                      <option>12 Bulan</option>
+                    </select>
+                  </div>
                   <div class="mb-3">
                     <label for="total_harga">Total Harga</label>
-                    <input type="text" class="form-control" id="total_harga" placeholder="Total Harga" value="" required="">
+                    <input type="text" class="form-control" name="total_harga" id="total_harga" placeholder="Total Harga" value="" required="" readonly>
                   </div>
+                  @endforeach
                 </div>
                 
                 <hr class="mb-4">
-                <button class="btn btn-primary px-3" id="pesan-kost-button">Pesan Kost</button>
-                <div id="status-layer" class="alert alert-success" style="display: none; position: fixed; top: 0; left: 0; right: 0; background-color: #4CAF50; color: #fff; text-align: center; padding: 10px;">
+                <button type="submit" class="btn btn-primary btn-block">Daftar</button>
+              </form>
         <table class="table table-bordered">
             <thead>
-                <tr>
-                    <th>Produk</th>
-                    <th>Harga</th>
-                    <th>Waktu Sewa</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Kamar A01</td>
-                    <td>$650</td>
-                    <td>1 bulan</td>
-                </tr>
+               
             </tbody>
         </table>
     </div>
-              </form>
+
             </div>
           </div>
     
@@ -187,7 +190,32 @@
 
   </main><!-- End #main -->
 
-
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          // Fungsi untuk menghitung total harga
+          function hitungTotalHarga() {
+              var lamaSewa = parseInt($('#lama_sewa').val());
+              var hargaKost = parseInt($('#harga_kost').val());
+  
+              if (!isNaN(lamaSewa) && !isNaN(hargaKost)) {
+                  var totalHarga = lamaSewa * hargaKost;
+                  $('#total_harga').val(totalHarga);
+              } else {
+                  $('#total_harga').val('');
+              }
+          }
+  
+          // Event listener untuk menghitung total harga saat lama sewa atau harga kost berubah
+          $('#lama_sewa, #harga_kost').change(function () {
+              hitungTotalHarga();
+          });
+  
+          // Panggil fungsi hitungTotalHarga pada saat halaman dimuat
+          hitungTotalHarga();
+      });
+  </script>
+  
 
 
 @endsection
