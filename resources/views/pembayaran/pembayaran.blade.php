@@ -13,53 +13,6 @@
 
     <!-- ======= Our Projects Section ======= -->
     <section id="projects" class="projects p-4">
-    <div class="row">
-        <div class="col-md-6 order-md-2 mb-6 mx-auto">
-          <ul class="list-group ">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                  <h6 class="my-0">Nama Penyewa</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                  <h6 class="my-0">Nama Kamar</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                  <h6 class="my-0">Harga Kamar</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-                <span class="text-muted">$8</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                  <h6 class="my-0">Ukuran Kamar</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-                <span class="text-muted">$5</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                  <h6 class="my-0">Jangka Sewa</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-                <span class="text-muted">$5</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between">
-                <span>Total Pembayaran (USD)</span>
-                <strong>$20</strong>
-              </li>
-          </ul>
-
-        </div>
-
-        <div class="container">
-      
-
           <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -108,7 +61,7 @@
               </form>
             </div>
             <div class="col-md-8 order-md-1">
-              <h4 class="mb-3">Billing address</h4>
+
 
 {{-- ini bagian form --}}
               <form action="{{ route('pembayaran.store')}}" method="POST">
@@ -163,12 +116,7 @@
           </div>
     
           <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">© 2017-2018 Company Name</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a href="#">Privacy</a></li>
-              <li class="list-inline-item"><a href="#">Terms</a></li>
-              <li class="list-inline-item"><a href="#">Support</a></li>
-            </ul>
+            <p class="mb-1">© Kost Thariq</p>
           </footer>
         </div>
         <script>

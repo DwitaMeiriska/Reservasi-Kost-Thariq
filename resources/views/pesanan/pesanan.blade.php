@@ -47,26 +47,6 @@
                 <p class="fs-2 fw-bold mb-0">{{$kosts->nama_kamar}}</p>
                 <p class="fs-5 mb-2">{{$kosts->harga_kamar}}</p> 
                 </div>
-                
-    
-                {{-- Jangka Sewa --}}
-                <div class="d-flex mb-3">
-                    <p class="text-dark font-weight-medium mb-0 mr-6" style="margin-right:20px">Jangka Sewa</p>
-                    <form class="ml-6">
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size">
-                            <label class="custom-control-label" for="size-1">1 Bulan</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
-                            <label class="custom-control-label" for="size-2">6 Bulan</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
-                            <label class="custom-control-label" for="size-3">12 Bulan</label>
-                        </div>
-                    </form>
-                </div>
               
                 <div class="d-flex align-items-center mb-4 pt-2">
                     <button type="button" class="btn btn-secondary px-3">
@@ -203,6 +183,10 @@
         var ulasanTab = document.getElementById('tab-pane-3');
         ulasanTab.classList.remove('show', 'active');
     </script>
+    </div>
+</main><!-- End #main -->
+
+
 
 
 @endsection
