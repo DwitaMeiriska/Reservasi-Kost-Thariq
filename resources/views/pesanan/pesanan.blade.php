@@ -46,6 +46,8 @@
                 <div class="mt-2">
                 <p class="fs-2 fw-bold mb-0">{{$kosts->nama_kamar}}</p>
                 <p class="fs-5 mb-2">{{$kosts->harga_kamar}}</p> 
+                <p class="fs-5 mb-2">{{$kosts->ukuran_kamar}}</p>
+                <p class="fs-5 mb-2">{{$kosts->deskripsi}}</p>
                 </div>
               
                 <div class="d-flex align-items-center mb-4 pt-2">
@@ -61,21 +63,8 @@
         <div class="row px-xl-5">
             <div class="col">
                 <div class="nav nav-tabs justify-content-center border-secondary mb-4">
-                    <a class="nav-item nav-link active" id="deskripsi-tab">Deskripsi</a>
                     <a class="nav-item nav-link active" id="ulasan-tab">Ulasan</a>
                 </div>
-
-                {{-- deskripsi --}}
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="tab-pane-1">
-                        <h4 class="mb-3">Deskripsi Produk</h4>
-                        <p>
-                            Eos no lorem eirmod diam diam, eos elitr et gubergren diam sea. Consetetur vero aliquyam invidunt duo dolores et duo sit. Vero diam ea vero et dolore rebum, dolor rebum eirmod consetetur invidunt sed sed et, lorem duo et eos elitr, sadipscing kasd ipsum rebum diam. Dolore diam stet rebum sed tempor kasd eirmod. Takimata kasd ipsum accusam sadipscing, eos dolores sit no ut diam consetetur duo justo est, sit sanctus diam tempor aliquyam eirmod nonumy rebum dolor accusam, ipsum kasd eos consetetur at sit rebum, diam kasd invidunt tempor lorem, ipsum lorem elitr sanctus eirmod takimata dolor ea invidunt.
-                        </p>
-                        <p>
-                            Dolore magna est eirmod sanctus dolor, amet diam et eirmod et ipsum. Amet dolore tempor consetetur sed lorem dolor sit lorem tempor. Gubergren amet amet labore sadipscing clita clita diam clita. Sea amet et sed ipsum lorem elitr et, amet et labore voluptua sit rebum. Ea erat sed et diam takimata sed justo. Magna takimata justo et amet magna et.
-                        </p>
-                    </div>
 
                     {{-- ulasan --}}
                     <div class="tab-pane fade" id="tab-pane-3">
