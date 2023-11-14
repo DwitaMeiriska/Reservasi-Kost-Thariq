@@ -53,7 +53,7 @@ Route::get('/kamarb', [KostController::class, 'indexB']);
 Route::get('/pesanan/{id}', [KostController::class, 'show'])->name('show');
 Route::get('/show/{id}', [PesananController::class, 'pemesanan'])->name('show');
 Route::get('/pembayaran/{id}', [PesananController::class, 'pembayaran'])->name('pembayaran');
-Route::get('/riwayat_transaksi', [TransaksiController::class, 'index'])->name ('riwayat_transaksi.index');
+Route::get('/riwayat_transaksi',[PesananController::class, 'transaksi'])->name ('riwayat_transaksi.index');
 
 Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
 Route::post('/pembayaran', [PesananController::class, 'store'])->name('pembayaran.store');

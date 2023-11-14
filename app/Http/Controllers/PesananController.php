@@ -83,6 +83,12 @@ class PesananController extends Controller
             return redirect()->route('home');
         }
     }
+    public function transaksi(){
+        $userId = Auth::id();
+        $pesanan = Pesanan::where('user_id', $userId)->get();
+        return view('riwayat_transaksi.transaksi', compact('pesanan'));
+
+    }
 
 
     /**
