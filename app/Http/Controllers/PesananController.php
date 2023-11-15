@@ -80,7 +80,7 @@ class PesananController extends Controller
 
             $pesanan->save();
 
-            return redirect()->route('home');
+            return redirect()->route('success');
         }
     }
     public function transaksi(){
