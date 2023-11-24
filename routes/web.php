@@ -43,10 +43,19 @@ Route::middleware('auth')->group(function () {
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 });
 
+Route::middleware('role:admin')->group(function () {
+    //semua route untuk admin disini
+    Route::get('/halaman-c',function () {
+        return view('contoh.halaman-a');
+    });
+});
+
+
 Route::resource('/', LandingController::class);
 Route::resource('/about', AboutController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/portofolio', PortofolioController::class);
+Route::resource('/manajemen-data-kost', KostController::class);
 
 Route::get('/kost', [KostController::class, 'indexA']);
 Route::get('/kamarb', [KostController::class, 'indexB']);
@@ -57,3 +66,4 @@ Route::get('/riwayat_transaksi',[PesananController::class, 'transaksi'])->name (
 Route::get('/pembayaran/sukses',[PesananController::class, 'sukses'])->name ('pembayaran.sukses');
 Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
 Route::post('/pembayaran', [PesananController::class, 'store'])->name('pembayaran.store');
+

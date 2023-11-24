@@ -21,4 +21,6 @@ class KostController extends Controller
         $listkost = Kost::find($id);
         return view('pesanan.pesanan', compact(['listkost']));
     }
+
+
 }
