@@ -19,7 +19,7 @@ class PesananController extends Controller
         
         return view('pesanan.pesanan');
     }
-
+ 
     public function pemesanan(Request $request, $id){
         $listkost = Kost::where('id', $id)->get();
         $nama_kamar = $request->get('nama_kamar');
@@ -80,7 +80,7 @@ class PesananController extends Controller
 
             $pesanan->save();
 
-            return redirect()->route('success');
+            return view('pembayaran.success');
         }
     }
     public function transaksi(){
